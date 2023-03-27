@@ -1,0 +1,20 @@
+.outline_btn{
+    color: #4799eb;
+    border-color: #4799eb;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+
+.outline_btn:hover{
+    color: #4799eb;
+    border-color: #4799eb;
+}
+
+.logo_shadow{
+    width: 70px;
+    filter: drop-shadow(1px 1px 3px #1983e6ce);
+}
+
+.text_color{
+    color: #4799eb !important;
+}
