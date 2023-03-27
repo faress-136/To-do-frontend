@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faCircleCheck, faPen, faTrashCan} from '@fortawesome/free-solid-svg-icons'
+import {faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import Loading from '../Loading/Loading.jsx'
 import Joi from 'joi'
@@ -113,7 +113,7 @@ async function addNote(){
   if(validateNote()){
     await axios({
       method: 'post',
-      url: "http://localhost:3004/note/add",
+      url: "https://todobackend-2mvb.onrender.com/note/add",
       headers: {"token" : `${token}`}, 
       data: {
         title,
@@ -153,7 +153,7 @@ async function updateNote(){
   if(validateNote()){
     await axios({
       method: 'put',
-      url: "http://localhost:3004/note/update",
+      url: "https://todobackend-2mvb.onrender.com/note/update",
       headers: {"token" : `${token}`}, 
       data: {
         _id,
@@ -181,33 +181,6 @@ async function updateNote(){
 
       {isLoading && <Loading/>}
 
-      {/* {tasks.length ? tasks.map((ele)=>(<>
-        <div className='bg-color rounded-3 mb-3 position-relative container-fluid'>
-        <div className='d-flex align-items-center'>
-            <h4 className='p-3 m-0 me-5'>
-              {ele.title}
-            </h4>
-
-            <p className='m-0'>{ele.description}</p>
-
-        </div>
-
-            <div className='position-absolute top-50 icon-wrap translate-middle-y end-0 d-inline-block m-0'>
-            <span onClick={()=>toggleCheck(check)}>
-           <FontAwesomeIcon icon={faCircleCheck}></FontAwesomeIcon>
-          </span>
-
-          <span>
-           <FontAwesomeIcon icon={faPen}></FontAwesomeIcon>
-          </span>
-
-          <span>
-           <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
-          </span>
-            </div>
-          
-      </div>
-      </>)) : ""} */}
       
 <div className="w-75 mx-auto">
   <div className='p-1'>
