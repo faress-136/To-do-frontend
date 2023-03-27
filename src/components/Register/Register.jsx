@@ -6,6 +6,8 @@ import axios from 'axios'
 import Joi from 'joi'
 import { useNavigate } from 'react-router-dom'
 import {Helmet} from 'react-helmet'
+import {Spinner} from 'react-bootstrap'
+
 
 export default function Register() {
 
@@ -130,7 +132,7 @@ export default function Register() {
         </div>
 
       <button className='btn outline_btn mt-3 d-flex ms-auto mt-4 mb-5'>
-        {isLoading ? <i className='fa fa-spinner fa-spin px-2'></i> : "Sign Up"}
+        {isLoading ? <Spinner animation="border" size="sm" /> : "Sign Up"}
       </button>
 
 

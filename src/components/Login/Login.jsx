@@ -6,6 +6,7 @@ import axios from 'axios'
 import Joi from 'joi'
 import { useNavigate } from 'react-router-dom'
 import {Helmet} from 'react-helmet'
+import {Spinner} from 'react-bootstrap'
 
 export default function Login({saveUser}) {
 
@@ -102,10 +103,10 @@ export default function Login({saveUser}) {
         </div>    
        </div>
 
-
       <button className='btn outline_btn mt-3 d-flex ms-auto mt-4 mb-5'>
-        {isLoading ? <i className='fa fa-spinner fa-spin px-2'></i> : "Sign In"}
+        {isLoading ? <Spinner animation="border" size="sm" /> : "Sign In"}
       </button>
+
 
 
       </form>
